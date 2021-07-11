@@ -22,7 +22,7 @@ coordinate_translator requires:
     Takes two input files, with one being the transcript reference file and the other one the query file.
     
     $ Coordinates_translator
-    usage: Coordinates_translator [-h] -f <reference.txt> -q <transcript_query.txt> -out <output.txt>
+    usage: Coordinates_translator [-h] -f <reference_coordinates.txt> -q <query_coordinates.txt> -out <output.txt>
 
     Arguments:
       -h,--help                show this help message and exit
