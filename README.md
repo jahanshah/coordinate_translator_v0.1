@@ -1,8 +1,8 @@
 <img src="https://github.com/jahanshah/coordinate_translator_v0.1/blob/main/images/logo2.png" width="120" height="120">
 
 # coordinate_translator 
-![](https://img.shields.io/github/languages/top/jahanshah/coordinate_translator_v0.1) 
 ![](https://img.shields.io/github/languages/count/jahanshah/coordinate_translator_v0.1) 
+![](https://img.shields.io/github/languages/top/jahanshah/coordinate_translator_v0.1) 
 ![](https://img.shields.io/scrutinizer/quality/g/jahanshah/coordinate_translator_v0.1/main) 
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/jahanshah/coordinate_translator_v0.1/main) 
 ![GitHub Release Date](https://img.shields.io/github/release-date/jahanshah/coordinate_translator_v0.1)
