@@ -19,10 +19,10 @@ coordinate_translator requires:
 
 ##  Usage
     
-    Takes two input files, with one being the transcript reference file and the other one the query file.
+    Takes two input files, with one being the reference file and the other one the query file.
     
-    $ Coordinates_translator
-    usage: Coordinates_translator [-h] -f <reference.txt> -q <transcript_query.txt> -out <output.txt>
+    $ coordinates_translator
+    usage: coordinates_translator [-h] -f <reference_coordinates.txt> -q <query_coordinates.txt> -out <output.txt>
 
     Arguments:
       -h,--help                show this help message and exit
@@ -30,13 +30,13 @@ coordinate_translator requires:
       -q,--query FILE          A two column query file
       -out,--output FILE       Output file  
        
-    The output is a simple tab-seperated file with four columns: transcript name, 0-based transcript coordinate, chromosome name, and chromosome coordinates.
+    The output is a simple tab-seperated file with four columns: query name, 0-based quary start coordinate, chromosome name, and chromosome coordinates.
 
 ## Input File Format
     
-   `Coordinate_translator` takes two input file:
-   1. A four column (tab-separated) file containing the transcripts. The first column is the transcript name, and the remaining three columns indicate it’s genomic mapping: chromosome name, 0-based starting position on the chromosome, and CIGAR string indicating the mapping.  
-   2. A two column (tab-separated) file indicating a set of queries. The first column is a transcript name, and the second column is a 0-based transcript coordinate.  
+   `coordinate_translator` takes two input file:
+   1. A four column (tab-separated) file containing the queries. The first column is the query name, and the remaining three columns indicate it’s genomic mapping: chromosome name, 0-based starting position on the chromosome, and CIGAR string indicating the mapping.  
+   2. A two column (tab-separated) file indicating a set of queries. The first column is a quary name, and the second column is a 0-based coordinate.  
 
 
 ## Example
@@ -48,7 +48,7 @@ For example, consider the simple transcript TR1, which aligns to the genome as f
        TR1             GTCATGTA-------CTAGCCGGTA-----------AGATAAT 
                        0    5           10   15              20  24 
 
-For This alignment is compactly expressed in the same way as a read alignment in the SAM/BAM format: using a position and **CIGAR** string. In this case, the (0-based) position is CHR1:3, and the **CIGAR** string is `8M7D6M2I2M11D7M`. Coordinate_translator assumes that the transcript is always mapped from genomic 5’ to 3’.
+For This alignment is compactly expressed in the same way as a read alignment in the SAM/BAM format: using a position and **CIGAR** string. In this case, the (0-based) position is CHR1:3, and the **CIGAR** string is `8M7D6M2I2M11D7M`. coordinate_translator assumes that the transcript is always mapped from genomic 5’ to 3’.
 
 
 **Input file 1** (reference file):
