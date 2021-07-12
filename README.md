@@ -74,12 +74,12 @@ For This alignment is compactly expressed in the same way as a read alignment in
 
 ## Performance:
 Given the uncertainty in run time due to computing resources, cache behaviors, etc., the “coordinate_translator.py” code was profiled 
-using ‘timeit’. Because ‘timeit’ runs the code many times, at multiple trial, we think it will give a good overall view of code performance. Accordingly, ‘timeit’ was run 1M times to provide a total runtime at the end of the code. This process was repeated 1000 times. The following scatterplot shows the total time distribution across the repeated runs.
+using ‘timeit’. Because ‘timeit’ runs the code many times, at multiple trial, I think it will give a good overall view of code performance. Accordingly, ‘timeit’ was run 1M times to provide a total runtime at the end of the code. This process was repeated 1000 times. The following scatterplot shows the total time distribution across the repeated runs.
 
 <img src="https://github.com/jahanshah/coordinate_translator_v0.1/blob/main/images/scatter_plot_timeit.png" width="380" height="280">
 
 One limitation here is the lack of comparative assessment of the code due to the absence of an alternative method to compare against,
-in terms of time and memory usage. However, we show that the run time remains short and stable across repeated testing. We also acknowledge 
+in terms of time and memory usage. However, I show that the run time remains short and stable across repeated testing. I also acknowledge 
 that ‘timeit’ is more suitable for code snippet. Given the ‘length’ of our code ‘timeit’ provides an overall view of code performance. 
 
 To evaluate the complexity of this code, a deterministic profiling was also performed using python's ‘cProfile’ module. 
