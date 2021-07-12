@@ -9,7 +9,7 @@
 
 
 ## Summary
-`coordinate_translator` is a tool that converts 0-based transcript coordinates to 0-based genomic coordinates using position and CIGAR strings from the input files. The key strength of this tool is .....efficiency... computational feasibility? limitations... 
+`coordinate_translator` is a tool that converts 0-based transcript coordinates to 0-based genomic coordinates using position and CIGAR strings from the input files. The strength of this code is in its performance tuning, by using list comprehensions where possible, use of ‘NumPy’ arrays, use of built-in functions, avoid unnecessary looping, as well as using generators and decorators. Errors are handled based on input specifications; however a more extensive case handling could be performed in future versions.  
 
 
 ## Python dependencies
@@ -71,6 +71,34 @@ For This alignment is compactly expressed in the same way as a read alignment in
     TR2   0     CHR2   10
     TR1   13    CHR1   23
     TR2   10    CHR2   20
+
+## Performance:
+Given the uncertainty in run time due to computing resources, cache behaviors, etc., the “coordinate_translator.py” code was profiled 
+using ‘timeit’. Because ‘timeit’ runs the code many times, at multiple trial, we think it will give a good overall view of code performance. Accordingly, ‘timeit’ was run 1M times to provide a total runtime at the end of the code. This process was repeated 1000 times. The following scatterplot shows the total time distribution across the repeated runs.
+
+<img src="https://github.com/jahanshah/coordinate_translator_v0.1/blob/main/images/scatter_plot_timeit.png" width="380" height="280">
+
+One limitation here is the lack of comparative assessment of the code due to the absence of an alternative method to compare against,
+in terms of time and memory usage. However, we show that the run time remains short and stable across repeated testing. We also acknowledge 
+that ‘timeit’ is more suitable for code snippet. Given the ‘length’ of our code ‘timeit’ provides an overall view of code performance. 
+
+To evaluate the complexity of this code, a deterministic profiling was also performed using python's ‘cProfile’ module. 
+The performance results are visualized using a python library named ‘snakeviz’. In the Icicle plot below, the root function is the
+top most rectangle with functions it calls below it. The amount of time spent inside a function is represented by the width of the rectangle. A rectangle that stretches across the plot represents a function that is taking up most of the time of its calling function. 
+
+
+<img src="https://github.com/jahanshah/coordinate_translator_v0.1/blob/main/images/snakeviz_cProfile.png" width="320" height="135">  |  <img src="https://github.com/jahanshah/coordinate_translator_v0.1/blob/main/images/snakeviz_cProfile_top10.png" width="320" height="135">
+
+Code complexity was assessed by testing a large number of inputs data against time taken to run the code. The results show a linear relationship between the two. 
+
+
+<img src="https://github.com/jahanshah/coordinate_translator_v0.1/blob/main/images/Complexity_plot.png" width="380" height="280"> 
+
+
+Code quality was further tested using 'Scrutinizer' that rates different elements of the code including classes, methods, and functions. Combining different metrics such as complexity, coupling and cohesion a score pf 9.35 
+is given to the 'coordinate_translater.py' code.
+
+
 
 ##  Author
 Jahanshah Ashkani
