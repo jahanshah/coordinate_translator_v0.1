@@ -75,7 +75,7 @@ class retrive_coordinates():
         """A function that translates query posiotions to genomic positions!"""
         cSeq = re.findall(r'[A-Z]', cigar)
         cLen = [int(x) for x in re.findall(r'\d+', cigar)]
-        cigar_seq = ''.join(map(str, [e1*e2 for e1, e2 in zip(cLen, cSeq)]))
+        cigar_seq = ''.join(map(str, (e1*e2 for e1, e2 in zip(cLen, cSeq))))
 
         g_index = []
         gap = 0
