@@ -1,4 +1,4 @@
-{
+##{
     "codedeploy.region": "us-east-1",
     "codedeploy.applicationName": "coordinate_translator_v1",
     "codedeploy.isApplicationWorkspace": true
